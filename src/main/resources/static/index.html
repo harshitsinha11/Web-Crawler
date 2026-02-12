@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Crawler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Web Crawler</h1>
+
+    <<form id="crawlForm" class="form-box">
+        <div id="urlContainer">
+            <div class="input-group">
+                <input type="url" name="url1" placeholder="https://example.com" required />
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button type="button" id="addUrlBtn" class="secondary-btn">+ Add URL</button>
+            <button type="submit" class="primary-btn">Start Crawl</button>
+        </div>
+    </form>
+
+
+    <div id="loader" class="loader hidden"></div>
+    <div id="status"></div>
+    <div id="results"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
