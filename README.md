@@ -1,8 +1,6 @@
 # 🚀 Multi-Threaded Web Crawler
 
 A concurrent web crawler built using **Java + Spring Boot** that performs BFS-based crawling with depth limits, page limits, and thread-safe aggregation.
-
-🌐 Live Demo: https://crawler.harshitsinha.in  
 📂 GitHub: https://github.com/harshitsinha11/Web-Crawler  
 
 ---
@@ -26,6 +24,8 @@ This project implements a **multi-threaded web crawler** that:
 ---
 
 ## 🧠 Architecture Overview
+
+```
 Client (HTML / JS)
 ↓
 REST Controller (/crawl/start)
@@ -36,7 +36,7 @@ ExecutorService (5 Worker Threads)
 ↓
 BlockingQueue<CrawlData> → BFS Traversal
 ConcurrentHashMap<String, PageData> → Thread-safe Storage
-
+```
 
 ---
 
@@ -60,35 +60,35 @@ ConcurrentHashMap<String, PageData> → Thread-safe Storage
 
 ## 📂 Project Structure
 
+```
 multithreaded-web-crawler/
 │
 ├── src/
-│ ├── main/
-│ │ ├── java/dev/harshit/crawler/
-│ │ │ ├── controller/
-│ │ │ │ └── CrawlController.java
-│ │ │ ├── service/
-│ │ │ │ └── CrawlService.java
-│ │ │ ├── core/
-│ │ │ │ └── PageCrawl.java
-│ │ │ ├── model/
-│ │ │ │ ├── PageData.java
-│ │ │ │ └── CrawlResponse.java
-│ │ │ ├── utils/
-│ │ │ │ └── HtmlUtils.java
-│ │ │ └── CrawlerApplication.java
-│ │ │
-│ │ └── resources/
-│ │ ├── static/
-│ │ │ ├── index.html
-│ │ │ ├── css/
-│ │ │ └── js/
-│ │ └── application.properties
+│   ├── main/
+│   │   ├── java/dev/harshit/crawler/
+│   │   │   ├── controller/
+│   │   │   │   └── CrawlController.java
+│   │   │   ├── service/
+│   │   │   │   └── CrawlService.java
+│   │   │   ├── core/
+│   │   │   │   └── PageCrawl.java
+│   │   │   ├── model/
+│   │   │   │   ├── PageData.java
+│   │   │   │   └── CrawlResponse.java
+│   │   │   ├── utils/
+│   │   │   │   └── HtmlUtils.java
+│   │   │   └── CrawlerApplication.java
+│   │   │
+│   │   └── resources/
+│   │       ├── static/
+│   │       │   ├── index.html
+│   │       │   ├── css/
+│   │       │   └── js/
+│   │       └── application.properties
 │
 ├── pom.xml
 └── README.md
-
-
+```
 ---
 
 ## 🔄 How It Works
@@ -96,6 +96,12 @@ multithreaded-web-crawler/
 ### 1️⃣ Input
 
 Frontend sends up to 5 seed URLs via:
+
+### Endpoint
+
+```http
+POST /crawl/start
+```
 
 ---
 
@@ -160,21 +166,19 @@ Each worker thread:
 ## ▶️ Running Locally
 
 ### 1. Clone the Repository
-
+```bash
+git clone https://github.com/harshitsinha11/Web-Crawler.git
+```
 
 ### 2. Run Application
+```bash
+mvn spring-boot:run
+```
 
 ### 3. Access Application
-
-
----
-
-## 🌐 Deployment
-
-- Frontend: Vercel
-- Backend: Render / Cloud Deployment
-- Domain: https://harshitsinha.in
-
+```bash
+http://localhost:9000/index.html
+```
 ---
 
 ## 📈 Future Improvements
@@ -220,6 +224,6 @@ MIT License
 
 Harshit Sinha  
 B.Tech Computer Science  
-Passionate about backend systems, concurrency, cloud computing, and intelligent systems.
+Passionate about backend systems, concurrency and cloud computing.
 
 
