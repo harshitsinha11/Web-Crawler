@@ -23,7 +23,6 @@ public class CrawlService {
 
     public CrawlResponse start(List<String> seedUrls) {
 
-
         ConcurrentHashMap<String,PageData> resultMap = new ConcurrentHashMap<>();
         BlockingQueue<CrawlData> listOfUrls = new LinkedBlockingDeque<>();
         AtomicInteger pagesCount = new AtomicInteger(0);
@@ -35,16 +34,11 @@ public class CrawlService {
         long startTime = System.currentTimeMillis();
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
 
-
         for(int i=1;i<=THREAD_COUNT;i++){
-
             executorService.submit(()->{
-
                 try{
                     while(pagesCount.get() < MAX_PAGES){
-
                         CrawlData task = listOfUrls.poll(500,TimeUnit.MILLISECONDS);
-
                         //Boundary Conditions
                         if(task == null) break;
                         if(task.depth > MAX_DEPTH) continue;

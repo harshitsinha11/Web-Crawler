@@ -11,7 +11,8 @@
 	<groupId>dev.harshit</groupId>
 	<artifactId>crawler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crawler</name>
+    <packaging>pom</packaging>
+    <name>crawler</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>screenshots</module>
+    </modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
