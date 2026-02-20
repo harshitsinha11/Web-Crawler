@@ -208,9 +208,17 @@ This project strengthened understanding of:
 
 ## 📷 Demo
 
-Add screenshots here:
+### 🏠 Home
+![Home](screenshots/Home.png)
 
+### 🧵 Code
+![Code](screenshots/Code.png)
 
+### 🌐 Crawled Results
+![Crawled](screenshots/Crawled.png)
+
+### 🚀 Logs
+![Demo](screenshots/Logs.png)
 
 ---
 
